@@ -1,0 +1,44 @@
+<!--
+  Generated template for the ContactDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>ContactDetail</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-list>
+            <ion-item id="profile-pic">
+                <img class=" img-circle " [src]="getPathPic(contact.firstname) ">
+            </ion-item>
+            <ion-item *ngIf="contact.prefix ">
+                <ion-label fixed class='fixedLabel'>Prefix</ion-label>
+                <ion-label>{{contact.prefix}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed class='fixedLabel'>First name</ion-label>
+                <ion-label>{{contact.firstname}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed class='fixedLabel'>Last name</ion-label>
+                <ion-label>{{contact.lastname}}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed class='fixedLabel'>Email</ion-label>
+                <ion-label>{{contact.email}}</ion-label>
+            </ion-item>
+            <ion-item color="primary" (click)="confirmCallPhone(contact)">
+                <ion-label fixed class='fixedLabel'>Phone</ion-label>
+                <ion-label>{{contact.phone}}</ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</ion-content>

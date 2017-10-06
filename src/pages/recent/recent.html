@@ -1,0 +1,30 @@
+<!--
+  Generated template for the RecentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>recent</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-list>
+            <ion-item *ngFor="let contact of contactRecentLists" (click)="getDetailPage(contact)">
+                <ion-icon item-start name="call"></ion-icon>
+                <ion-label>
+                    <h2>{{contact.firstname}} {{contact.lastname}}</h2>
+                </ion-label>
+                <ion-label item-end>
+                    <h2>{{convertTime(contact)}}</h2>
+                </ion-label>
+
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</ion-content>
